@@ -11,7 +11,10 @@
   "sections": {
     "lotion_lp": {
       "type": "lotion-lp",
-      "settings": {}
+      "settings": {
+        "featured_product": "locao-hidratante-premium",
+        "collection": "colecao-de-locoes"
+      }
     }
   },
   "order": [
