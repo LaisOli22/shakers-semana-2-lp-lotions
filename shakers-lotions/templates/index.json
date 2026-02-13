@@ -9,12 +9,12 @@
  */
 {
   "sections": {
-    "main": {
-      "type": "hello-world",
+    "lotion_lp": {
+      "type": "lotion-lp",
       "settings": {}
     }
   },
   "order": [
-    "main"
+    "lotion_lp"
   ]
 }
