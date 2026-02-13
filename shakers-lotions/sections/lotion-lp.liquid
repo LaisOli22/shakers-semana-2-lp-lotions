@@ -1,0 +1,45 @@
+<section>
+
+    <h1>{{page.title}}</h1>
+    <div>{{page.content}}</div>
+
+    {% assign product = all_products[section.settings.featured_product] %}
+
+    {% if product %}
+        <h2>{{product.title}}</h2>
+        <img src="{{ product.featured_image | image_url }}" alt="{{product.title}}" height="500" width="500">
+        <p>{{product.price | money}}</p>
+        <a href="{{product.url}}">Ver produto</a>
+    {% endif %}
+
+    {%  assign collection = collections[section.settings.collection]  %}
+
+    {% if collection %}
+        {% for product in collection.products %}
+            <div>
+                <h3>{{product.title}}</h3>
+                <img src="{{product.featured_image |  image_url }}" alt="{{product.title}}" width="200" height="200">
+                <p>{{product.price | money }}</p>
+                <a href="{{product.url}}">Ver produto</a>
+            </div>
+        {% endfor %}
+    {% endif %}
+</section>
+
+{%  schema  %} 
+    {
+        "name": "Frederico Loções",
+        "settings": [
+            {
+                "type": "product",
+                "id": "featured_product",
+                "label": "Produto principal"
+            },
+            {
+                "type": "collection",
+                "id": "collection",
+                "label": "Coleção de loções"
+            }
+        ]
+    }
+{% endschema %}
