@@ -1,28 +1,44 @@
-<section>
+{{"lotion-lp.css" | asset_url |  stylesheet_tag}}
 
-    <h1>{{page.title}}</h1>
-    <div>{{page.content}}</div>
+<section class="lotion-lp">
+    <div class="lp-header">
+        <h1>{{page.title}}</h1>
+        <div class="lp-content">{{page.content}}</div>
+    </div>
 
     {% assign product = all_products[section.settings.featured_product] %}
 
     {% if product %}
-        <h2>{{product.title}}</h2>
-        <img src="{{ product.featured_image | image_url }}" alt="{{product.title}}" height="500" width="500">
-        <p>{{product.price | money}}</p>
-        <a href="{{product.url}}">Ver produto</a>
+        <article class="featured-product">
+            <figure class="featured-product__image">
+                <img src="{{product.featured_image |  image_url }}" alt="{{product.title}}" width="500" height="500">
+            </figure>
+
+            <div class="featured-product__info">
+                <h2>{{product.title}}</h2>
+                <p class="price">{{product.price | money}}</p>
+                <a class="button-buy" href="{{product.url}}">Comprar agora</a>
+            </div>
+        </article>
+        
     {% endif %}
 
     {%  assign collection = collections[section.settings.collection]  %}
 
     {% if collection %}
-        {% for product in collection.products %}
-            <div>
-                <h3>{{product.title}}</h3>
+        <section class="collection">
+
+            {% for product in collection.products %}
+
+            <div class="collection__product-card">
                 <img src="{{product.featured_image |  image_url }}" alt="{{product.title}}" width="200" height="200">
-                <p>{{product.price | money }}</p>
-                <a href="{{product.url}}">Ver produto</a>
+                <h3>{{product.title}}</h3>
+                <p class="collection__price">{{product.price | money }}</p>
+                <a class="collection__card-button" href="{{product.url}}">Ver produto</a>
             </div>
-        {% endfor %}
+
+            {% endfor %}
+        </section>
     {% endif %}
 </section>
 
