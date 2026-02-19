@@ -83,4 +83,8 @@ Selecionar:
 
 ### Link do Pull request
 
+https://github.com/LaisOli22/shakers-semana-2-lp-lotions/pull/1
+
 ### Link do Vídeo
+
+https://drive.google.com/file/d/16Gqj50BHYw5DWIO-XitUsD6XqvpsKj58/view?usp=sharing
